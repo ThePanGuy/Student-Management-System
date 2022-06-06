@@ -5,10 +5,7 @@ import com.project.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class StudentController {
@@ -58,6 +55,12 @@ public class StudentController {
 
         //save updated student object
         service.updateStudent(existingStudent);
+        return "redirect:/students";
+    }
+
+    @GetMapping("/students/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        service.deleteStudentById(id);
         return "redirect:/students";
     }
 }
