@@ -52,6 +52,7 @@ public class StudentController {
         existingStudent.setFirstName(student.getFirstName());
         existingStudent.setLastName(student.getLastName());
         existingStudent.setEmail(student.getEmail());
+        existingStudent.setDescription(student.getDescription());
 
         //save updated student object
         service.updateStudent(existingStudent);
@@ -63,4 +64,12 @@ public class StudentController {
         service.deleteStudentById(id);
         return "redirect:/students";
     }
+
+    @GetMapping("/students/details/{id}")
+    public String viewStudentDetails(@PathVariable Long id,Model model) {
+        model.addAttribute("student",service.getStudentById(id));
+        return "student_info";
+    }
+
+
 }

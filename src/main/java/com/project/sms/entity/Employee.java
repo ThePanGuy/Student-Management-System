@@ -3,29 +3,30 @@ package com.project.sms.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="students")
-public class Student {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="first_name",nullable = false)
+    @Column(name = "first_name",nullable=false)
     private String firstName;
-    @Column(name="last_name")
+    @Column(name = "middle_name")
+    private String middleName;
+    @Column(name = "last_name",nullable = false)
     private String lastName;
     @Column(name = "email")
     private String email;
-    @Column(name="description")
-    private String description;
+    @Column(name = "department")
+    private String department;
 
-    public Student() {
-
+    public Employee() {
     }
 
-    public Student(String firstName, String lastName, String email,String description) {
+    public Employee(String firstName, String middleName, String lastName, String email, String department) {
         this.firstName = firstName;
+        this.middleName = middleName;
         this.lastName = lastName;
         this.email = email;
-        this.description= description;
+        this.department = department;
     }
 
     public Long getId() {
@@ -44,6 +45,14 @@ public class Student {
         this.firstName = firstName;
     }
 
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -60,11 +69,11 @@ public class Student {
         this.email = email;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 }
