@@ -33,24 +33,26 @@
 
 <div class="container">
     <div class = "row">
-        <h1>Student Info </h1>
+        <h1>Employee Info </h1>
     </div>
     <table class = "table table-striped table-bordered">
         <thead class = "table-dark">
         <tr>
-            <th>Student First Name</th>
-            <th>Student Last Name</th>
-            <th>Student Email</th>
-            <th>Student Description</th>
+            <th>Employee First Name</th>
+            <th>Employee Middle Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Email</th>
+            <th>Employee Department</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each = "student: ${student}">
-            <td th:text ="${student.firstName}"></td>
-            <td th:text ="${student.lastName}"></td>
-            <td th:text ="${student.email}"></td>
-            <td th:text ="${student.description}"></td>
+        <tr th:each = "employee: ${employee}">
+            <td th:text ="${employee.firstName}"></td>
+            <td th:text ="${employee.middleName}"></td>
+            <td th:text ="${employee.lastName}"></td>
+            <td th:text ="${employee.email}"></td>
+            <td th:text ="${employee.department}"></td>
 
         </tr>
         </tbody>

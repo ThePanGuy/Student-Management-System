@@ -70,4 +70,6 @@ public class StudentController {
         model.addAttribute("student",service.getStudentById(id));
         return "student_info";
     }
+
+
 }
